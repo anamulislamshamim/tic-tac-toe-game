@@ -31,20 +31,30 @@ int main()
         ui(matrix, n, m);
         if(player1){
             int r,c;
+            Flag1:
             printf("Player 1 Turn (X). Enter the Row and Column. The value will be (0-2): ");
             scanf("%d%d",&r,&c);
+            if(matrix[r][c] != -1){
+                printf("Invalid Cell\n");
+                goto Flag1;
+            }
             matrix[r][c]=2;
             player1=false;
             player2=true;
         }else{
             int r,c;
+            Flag2:
             printf("Player 2 Turn (0). Enter the Row and Column. The value will be (0-2): ");
             scanf("%d%d",&r,&c);
+            if(matrix[r][c]!=-1){
+                printf("Invalid Cell\n");
+                goto Flag2;
+            }
             matrix[r][c]=1;
             player1=true;
             player2=false;
         }
-    }
+    };   
     ui(matrix, n, m);
     return 0;
 }
