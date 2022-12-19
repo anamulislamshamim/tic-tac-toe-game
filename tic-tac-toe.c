@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
+
+// UI function
 void ui(int matrix[][3], int n, int m)
 {
     int i, j;
@@ -76,6 +78,7 @@ int main()
     bool player2 = false;
     // take user input:
     int flag = 0;
+    // take user input
     while (true)
     {
         ui(matrix, n, m);
